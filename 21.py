@@ -55,6 +55,10 @@ def veintiuno(num_jugadores):
                 print (cartas_jugadores[jugador])
             pregunta=int(input("¿Que carta quieres meter?"))
             pregunta_mazo=int(input("¿A que mazo?"))
+
+            while (pregunta_mazo==1 and suma_mazo>=21) or (pregunta_mazo==2 and suma_mazo2>=21) or (pregunta_mazo==3 and suma_mazo3>=21) or(pregunta_mazo==4 and suma_mazo4>=21):
+                pregunta_mazo = int(input("Este mazo esta completado , eliga otro."))
+
                     
                 
             if pregunta_mazo==1 and banderamazo1:
@@ -69,6 +73,7 @@ def veintiuno(num_jugadores):
                         banderamazo1 = False
                     elif suma_mazo > suma_ganadora:
                         banderamazo1 = False
+
                     
             
             elif pregunta_mazo==2 and banderamazo2:
@@ -112,14 +117,13 @@ def veintiuno(num_jugadores):
                     elif suma_mazo4 > suma_ganadora:
                         banderamazo4 = False
                     
-            else:
-                    print("Ese mazo ya ha sido completado, pasa al siguiente por no prestar atención churra")
+
 
             jugador +=1
 #Aqui finaliza la introduccion de cartas a los mazos de encima de la mesa.
 
         numero_ganador=0
-        for puntuacion in range(puntuaciones_jugadores):                #Para determinar el ganador o ganadores del juego
+        for puntuacion in range(puntuaciones_jugadores):              #Para determinar el ganador o ganadores del juego
             if puntuaciones_jugadores(puntuacion)>numero_ganador:
                 numero_ganador=puntuaciones_jugadores(puntuacion)
 
